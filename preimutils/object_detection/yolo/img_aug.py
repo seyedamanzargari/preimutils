@@ -163,6 +163,9 @@ class AMRLImageAug:
         """
         images_list = os.listdir(self.images_dir)
         txts_list = os.listdir(self.annotations_dir)
+        
+        images_list.sort()
+        txts_list.sort()
 
         for i in tqdm(range(len(images_list))):
             txt_name = os.path.join(self.annotations_dir, txts_list[i])
